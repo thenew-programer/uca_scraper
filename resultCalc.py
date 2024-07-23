@@ -6,18 +6,26 @@ import pandas as pd
 from bs4 import BeautifulSoup as bs
 import time
 
-# Subjects dict holds abrv for the subject and their wheights
-# related to the overall result
-subjects = {"S5.GR01 Gestion financière": ["GF", 0.5],
-            "S5.GR01 Fiscalité":["FI", 0.5],
-            "S5.GR01 Gestion de portefeuille 1": ["GP", 1],
-            "S5.GR01 Jeux,Structure de marché et institution financière 1": ["JX", 1],
-            "S5.GR01 Intelligence économique1": ["IE", 1],
-            "S5.GR01 Introduction à l`économétrie": ["EC", 1],
-            "S5.GR01 Français": ["L1", 0.5],
-            "S5.GR01 Anglais": ["L2", 0.5],
-            "S5.GR01 Digital Skills I": ["DJ", 1]
-            }
+"""
+Subjects dict holds abrv for the subject and their wheights
+related to the overall result, you need to put exactly the names of
+subjects in the website.
+"""
+#####################################################################################
+#                                       EXAMPLE                                     #
+#####################################################################################
+#               Subject Name                                                  abrv                          wheight
+# subjects = {"S5.GR01 Gestion financière":                                   ["GF",                         0.5],
+#             "S5.GR01 Fiscalité":                                            ["FI",                         0.5],
+#             "S5.GR01 Gestion de portefeuille 1":                            ["GP",                           1],
+#             "S5.GR01 Jeux,Structure de marché et institution financière 1": ["JX",                           1],
+#             "S5.GR01 Intelligence économique1":                             ["IE",                           1],
+#             "S5.GR01 Introduction à l`économétrie":                         ["EC",                           1],
+#             "S5.GR01 Français":                                             ["L1",                         0.5],
+#             "S5.GR01 Anglais":                                              ["L2",                         0.5],
+#             "S5.GR01 Digital Skills I":                                     ["DJ",                           1]
+#             }
+subjects = {}
 
 
 def read_csv(filename: str) -> pd.DataFrame:
